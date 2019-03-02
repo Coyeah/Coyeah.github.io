@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="记录一点技术记录一点生活">
+
+
+
+
+  <meta name="keywords" content="blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Coyeah's blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="http://www.coyeah.top/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "S24nOfvDVMXopIxtstnGPxbo-gzGzoHsz",
+      appKey: "ze4sgJXBhhjroXU9A45dTdMb"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"S24nOfvDVMXopIxtstnGPxbo-gzGzoHsz","app_key":"ze4sgJXBhhjroXU9A45dTdMb"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> Coyeah's blog </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Coyeah's blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Coyeah's blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <section id="posts" class="posts">
+    
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/08/14/入门浅记HTTP缓存机制/">入门浅记HTTP缓存机制</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-08-14
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/08/14/入门浅记HTTP缓存机制/" data-title="入门浅记HTTP缓存机制">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h1 id="HTTP简述"><a href="#HTTP简述" class="headerlink" title="HTTP简述"></a>HTTP简述</h1><p>前端关于网络协议的入门，接触得最多最主要的就是HTTP协议。浏览器与服务器之间的通信协议，从浏览器发出请求，由服务器响应请求。图解如下：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/13/16531214dde78290?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="HTTP图解"></p>
+<p>HTTP报文是浏览器与服务器之间通信的载体（数据块），由报文首部（附加信息，如cookie、缓存信息等）和报文主体（传输的数据内容）构成。</p>
+<p>请求报文：<code>浏览器 =&gt; 服务器</code>；报文首部构成：请求行（HTTP方法、URI、HTTP版本）、请求首部字段、其他。</p>
+<p>响应报文：<code>服务器 =&gt; 浏览器</code>；报文首部构成：状态行（HTTP版本、状态码）、响应首部字段、其他。</p>
+          <div class="read-more">
+            <a href="/2018/08/14/入门浅记HTTP缓存机制/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/07/19/antdpro-从百思不解到豁然开朗/">antdpro-从百思不解到豁然开朗</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-07-19
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/07/19/antdpro-从百思不解到豁然开朗/" data-title="antdpro-从百思不解到豁然开朗">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p><a href="https://pro.ant.design/index-cn" target="_blank" rel="noopener">ANT DESIGN PRO - 开箱即用的中台前端/设计解决方案</a></p>
+<p>这是一个爬坑的过程，感觉像拿着左轮PK高达，甚至一度怀疑人生。在做电子货币交易系统这个项目的时候，也是我第一个说出来用antd，感觉就像给自己挖了一个坑，因为随后就看到了antd pro，然后就用上了。由于等级相差太多了，所以上手第一步，显示把它所用到的知识点都去学一遍。react-router、redux-saga、dva、mockJs……好了吧，学习好了基础知识点，要上手了。好家伙，又是一道难题。整个项目结构就九曲十八弯。写上一片文章纪念一下我所爬过的坑。</p>
+<p>踏上了解antd pro源码的学习路径（只是一部分，纯个人理解和学习，欢迎指正）</p>
+          <div class="read-more">
+            <a href="/2018/07/19/antdpro-从百思不解到豁然开朗/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/07/16/阿里第二记-2018年秋季前端应届在线评测/">阿里第二记-2018年秋季前端应届在线评测</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-07-16
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/07/16/阿里第二记-2018年秋季前端应届在线评测/" data-title="阿里第二记-2018年秋季前端应届在线评测">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>时隔四个月，也等待了四个月，秋招又来了。对上一次感觉是因为误操作所以没等来电话，学生时期的最后一次机会了。</p>
+<p>还是30min的评测！</p>
+<blockquote>
+<p>题目：实现mergePromise函数，把传进去的数组顺序先后执行，并且把返回的数据先后放到数组（data）中。</p>
+</blockquote>
+          <div class="read-more">
+            <a href="/2018/07/16/阿里第二记-2018年秋季前端应届在线评测/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/07/10/拉升的综合实践/">拉升的综合实践</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-07-10
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/07/10/拉升的综合实践/" data-title="拉升的综合实践">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p><em>[暂未完结]</em></p>
+<p>第一次拿到一个如此完整的任务，又能有一位有经验的“师兄”带领和指导, 非常Lucky！试一次大幅拉高自己的机会，要做到完美，还得有个复盘。</p>
+          <div class="read-more">
+            <a href="/2018/07/10/拉升的综合实践/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/06/30/JavaScript中的浅拷贝与深拷贝/">JavaScript中的浅拷贝与深拷贝</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-30
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/06/30/JavaScript中的浅拷贝与深拷贝/" data-title="JavaScript中的浅拷贝与深拷贝">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>拷贝、复制、克隆……</p>
+<p>在JavaScript中的Object类型中，拷贝是有分为浅拷贝与深拷贝的。</p>
+<h2 id="JavaScript的变量类型"><a href="#JavaScript的变量类型" class="headerlink" title="JavaScript的变量类型"></a>JavaScript的变量类型</h2><p>（1）变量类型：</p>
+<p>Undefined, Null, Boolean, Number, String。在ES6中新添加了一种Symbol。</p>
+<p>这样一种类型的变量是按值存放的。存放在栈内存中的简单数据段，可以直接访问。不存在深拷贝或者浅拷贝的区别，拷贝就是拷贝。</p>
+<p>（2）引用类型：</p>
+<p>Object</p>
+<p>存放在堆内存中的对象，变量保存的是一个指针，指向一个地址。当需要访问引用类型（如对象、数组等）的值的时候，首先从栈中获取该对象的地址指针，再从堆内存中提取所要的数据。</p>
+          <div class="read-more">
+            <a href="/2018/06/30/JavaScript中的浅拷贝与深拷贝/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/06/28/浅析面向对象开发/">浅析面向对象开发</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-28
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/06/28/浅析面向对象开发/" data-title="浅析面向对象开发">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>模拟餐厅经营。</p>
+<h2 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h2><blockquote>
+<p>我们现在要开一个餐厅啦，餐厅里面有服务员，有厨师，有顾客。学习面向对象，为餐厅和几个角色创建自己的类吧。<br>餐厅可以招聘或者解雇职员，职员越多，就越能够满足更多的顾客需求，从而赚取更多的钱<br>餐厅里的容量是有限的，当顾客坐满了，其他顾客需要排队<br>服务员的工作有两个职责，一个是负责点菜，另外一个是上菜<br>厨师的职责就一个，烹饪食物<br>顾客可以做两件事情，一个是点菜，一个是吃</p>
+</blockquote>
+<p>这一系列写了很久。主要使用到的设计模式是职责链模式和观察者模式。</p>
+<p>工厂模式、命令模式、适配器模式、桥接模式这样的都会穿插在其中，可能是平时用习惯了，所以没有刻意是哪种设计模式。</p>
+<p>要有复盘的好习惯，这个模拟还会有些可视化的地方需要改进和添加，所以还在继续更新。</p>
+          <div class="read-more">
+            <a href="/2018/06/28/浅析面向对象开发/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/06/27/浮点数比较/">浮点数比较</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-27
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/06/27/浮点数比较/" data-title="浮点数比较">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <blockquote>
+<p>0.1 + 0.2 == 0.3  // false</p>
+</blockquote>
+<p>在JavaScript中浮点数的运算中会出现这样的问题。</p>
+<p>当你输出一下<code>0.1 + 0.2</code>的时候，得出的结果是</p>
+<p><code>0.30000000000000004</code></p>
+<p>在试一下<code>0.1 + 0.2 - 0.3</code></p>
+<p><code>5.551115123125783e-17</code></p>
+<p>为了解决这个问题，在新的ES6引入了一个极小的常量<code>Number.EPSILON</code>，它表示1与大于1的最小浮点数的差。</p>
+<p>对于64位浮点数来说，大于1的最小浮点数相当于二进制的1.00 … 001，小数点后面有连续的51个零。</p>
+          <div class="read-more">
+            <a href="/2018/06/27/浮点数比较/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/06/20/CSS布局：圣杯与flex/">CSS布局：圣杯与flex</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-20
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/06/20/CSS布局：圣杯与flex/" data-title="CSS布局：圣杯与flex">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="关于圣杯布局"><a href="#关于圣杯布局" class="headerlink" title="关于圣杯布局"></a>关于圣杯布局</h2><p>描述下圣杯布局，有点类似于网格布局的三列式，可以理解为中间列是杯身，两侧则为两个杯耳。不同于网格布局的是只有三列一行。</p>
+<p><img src="https://www.coyeah.top/image/float_css_1.jpg" alt="float_css_1.jpg"></p>
+<p>两侧的盒子固定宽度，中间盒子自适应宽度。</p>
+<p>但是为什么不用网格布局来实现呢，主要是因为圣杯布局里，中间盒子是可以优先渲染的，代码上它是优先于两侧的盒子。</p>
+          <div class="read-more">
+            <a href="/2018/06/20/CSS布局：圣杯与flex/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/06/13/React组件的生命周期/">React组件的生命周期</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-13
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/06/13/React组件的生命周期/" data-title="React组件的生命周期">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="React组件的生命周期可分为三个状态："><a href="#React组件的生命周期可分为三个状态：" class="headerlink" title="React组件的生命周期可分为三个状态："></a>React组件的生命周期可分为三个状态：</h2><p>挂载、更新、卸载。</p>
+<ul>
+<li>Mounting: 已插入真实DOM;</li>
+<li>Updating: 正在被重新渲染;</li>
+<li>Unmounting: 已移除真实DOM;</li>
+</ul>
+          <div class="read-more">
+            <a href="/2018/06/13/React组件的生命周期/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/06/12/再一些JS算题/">再一些JS算题</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-12
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/06/12/再一些JS算题/" data-title="再一些JS算题">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="1-请用-javascript-实现一个函数-parseUrl-url-，将一段-url-字符串解析为-Object。"><a href="#1-请用-javascript-实现一个函数-parseUrl-url-，将一段-url-字符串解析为-Object。" class="headerlink" title="1.请用 javascript 实现一个函数 parseUrl(url)，将一段 url 字符串解析为 Object。"></a>1.请用 javascript 实现一个函数 parseUrl(url)，将一段 url 字符串解析为 Object。</h2><blockquote>
+<p>parseUrl(“<a href="http://www.coyeah.top/product/list?id=123456&amp;sort=discount#title&quot;)">http://www.coyeah.top/product/list?id=123456&amp;sort=discount#title&quot;)</a>;</p>
+</blockquote>
+<p>返回结果：</p>
+<blockquote>
+<p>{<br>  protocol: “http”,<br>  host: “<a href="http://www.coyeah.com&quot;" target="_blank" rel="noopener">www.coyeah.com&quot;</a>,<br>  path: “/product/list”,<br>  query: {<br>    id: “12345”,<br>    sort: “discount”<br>  },<br>  hash: “title”<br>}</p>
+</blockquote>
+          <div class="read-more">
+            <a href="/2018/06/12/再一些JS算题/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+      
+  <nav class="pagination">
+    
+    
+      <a class="next" href="/page/2/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+    
+  </section>
+
+          </div>
+          
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:Coyeah_chen@outlook.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Coyeah" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/coyeah-21/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2018 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Coyeah Chen</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

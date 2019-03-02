@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="正则表达式备忘录">
+
+
+
+
+  <meta name="keywords" content="blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Coyeah's blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="http://www.coyeah.top/2018/04/23/正则表达式备忘录/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "S24nOfvDVMXopIxtstnGPxbo-gzGzoHsz",
+      appKey: "ze4sgJXBhhjroXU9A45dTdMb"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"S24nOfvDVMXopIxtstnGPxbo-gzGzoHsz","app_key":"ze4sgJXBhhjroXU9A45dTdMb"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 正则表达式备忘录 - Coyeah's blog </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Coyeah's blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Coyeah's blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          正则表达式备忘录
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-04-23
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/04/23/正则表达式备忘录/" data-title="正则表达式备忘录">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#标志-flags"><span class="toc-text">标志 (flags)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么时候使用构造函数？"><span class="toc-text">什么时候使用构造函数？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匹配字符表"><span class="toc-text">匹配字符表</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p>创建正则表达式的两种方式：</p>
+<blockquote>
+<p>var expression = / pattern / flags;</p>
+</blockquote>
+<ul>
+<li>使用正则表达式字面量：<code>var pattern = /[bc]at/g;</code></li>
+<li>调用 RegExp 对象的构造函数：<code>var pattern = new RegExp(&quot;[bc]at&quot;, &quot;i&quot;);</code></li>
+</ul>
+<h2 id="标志-flags"><a href="#标志-flags" class="headerlink" title="标志 (flags)"></a>标志 (flags)</h2><ul>
+<li>g: 表示全局 (global) 模式</li>
+<li>i: 表示不区分大小写 (case-insensitive) 模式</li>
+<li>m: 表示多行 (multiline) 模式</li>
+</ul>
+<h2 id="什么时候使用构造函数？"><a href="#什么时候使用构造函数？" class="headerlink" title="什么时候使用构造函数？"></a>什么时候使用构造函数？</h2><p>当正则表达式的模式会变发生改变，或者需要从其他地方得到时（例如用户输入），适合使用构造函数的方式。</p>
+<a id="more"></a>
+<h2 id="匹配字符表"><a href="#匹配字符表" class="headerlink" title="匹配字符表"></a>匹配字符表</h2><ul>
+<li><code>\</code>: 将其后的特殊字符转义为字面量</li>
+<li><code>^</code>: 匹配输入的开始</li>
+<li><code>$</code>: 匹配输入的结束</li>
+<li><code>*</code>: 匹配前一个表达式0次或者多次，等价于 {0,}</li>
+<li><code>+</code>: 匹配前一个表达式1次或多次，等价于 {1,}</li>
+<li><code>?</code>: 匹配前一个表达式0次或者1次，等价于 {0,1}</li>
+<li><code>.</code>: 匹配除了换行符（\n）之外的任何单个字符</li>
+<li><code>(x)</code>: 匹配 ‘x’ 并记住匹配项</li>
+<li><code>(?:x)</code>: 匹配 ‘x’ 但不记住匹配项</li>
+<li><code>x(?=y)</code>: 匹配 ‘x’ 并且 ‘x’ 后面跟着 ‘y’，也叫作正向肯定查找</li>
+<li><code>x(?!y)</code>: 匹配 ‘x’ 并且 ‘x’ 后面不跟着 ‘y’，也叫作正向否定查找</li>
+<li><code>x | y</code>: 匹配 ‘x’ 或者 ‘y’</li>
+<li><code>{n}</code>: 匹配前一个字符 n 次</li>
+<li><code>{n, m}</code>: 匹配前一个字符最少 n 次</li>
+<li><code>[xyz]</code>: 匹配括号中的任意一个字符，可以使用<code>-</code>指定范围</li>
+<li><code>\b</code>: 匹配一个词的边界</li>
+<li><code>\B</code>: 匹配非单词边界</li>
+<li><code>\d</code>: 匹配一个数字</li>
+<li><code>\D</code>: 匹配一个非数字字符，等价于 [^0-9]</li>
+<li><code>\f</code>: 匹配一个换页符</li>
+<li><code>\n</code>: 匹配一个换行符</li>
+<li><code>\r</code>: 匹配一个回车符</li>
+<li><code>\s</code>: 匹配一个空白字符</li>
+<li><code>\S</code>: 匹配一个非空白字符</li>
+<li><code>\t</code>: 匹配一个水平制表符</li>
+<li><code>\v</code>: 匹配一个垂直制表符</li>
+<li><code>\w</code>: 匹配一个单字字符，等价于 [A-Za-z0-9_]</li>
+<li><code>\W</code>: 匹配一个非单字字符，等价于 [^A-Za-z0-9_]</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://www.coyeah.top">Coyeah Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://www.coyeah.top/2018/04/23/正则表达式备忘录/">http://www.coyeah.top/2018/04/23/正则表达式备忘录/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/JavaScript/">JavaScript</a>
+            
+              <a href="/tags/前端/">前端</a>
+            
+              <a href="/tags/RegExp/">RegExp</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/04/27/初入React世界/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">初入React世界</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/04/18/DOM节点层次的问题/">
+        <span class="next-text nav-default">DOM节点层次的问题</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:Coyeah_chen@outlook.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Coyeah" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/coyeah-21/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2018 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Coyeah Chen</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

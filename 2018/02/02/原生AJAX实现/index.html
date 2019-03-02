@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="原生AJAX实现">
+
+
+
+
+  <meta name="keywords" content="blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Coyeah's blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="http://www.coyeah.top/2018/02/02/原生AJAX实现/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "S24nOfvDVMXopIxtstnGPxbo-gzGzoHsz",
+      appKey: "ze4sgJXBhhjroXU9A45dTdMb"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"S24nOfvDVMXopIxtstnGPxbo-gzGzoHsz","app_key":"ze4sgJXBhhjroXU9A45dTdMb"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 原生AJAX实现 - Coyeah's blog </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Coyeah's blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Coyeah's blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          原生AJAX实现
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-02-02
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/02/02/原生AJAX实现/" data-title="原生AJAX实现">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#原生AJAX代码："><span class="toc-text">原生AJAX代码：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、获取XMLHTTP浏览器控件，用于后面打开链接"><span class="toc-text">1、获取XMLHTTP浏览器控件，用于后面打开链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、打开连接，通过异步传输，发送参数到AjaxServlet，返回符合条件的XML-JSON文档或者普通文本"><span class="toc-text">2、打开连接，通过异步传输，发送参数到AjaxServlet，返回符合条件的XML/JSON文档或者普通文本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、处理返回结果"><span class="toc-text">3、处理返回结果</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <blockquote>
+<p>原生AJAX，学习前端的第一步</p>
+</blockquote>
+<p>AJAX技术的核心就是XMLHttpRequest对象。</p>
+<p>AJAX技术的工作原理可以分为三步：</p>
+<h1 id="原生AJAX代码："><a href="#原生AJAX代码：" class="headerlink" title="原生AJAX代码："></a>原生AJAX代码：</h1><h2 id="1、获取XMLHTTP浏览器控件，用于后面打开链接"><a href="#1、获取XMLHTTP浏览器控件，用于后面打开链接" class="headerlink" title="1、获取XMLHTTP浏览器控件，用于后面打开链接"></a>1、获取XMLHTTP浏览器控件，用于后面打开链接</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xmlHttp = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>获的Microsoft IE</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Msxml2.XMLHTTP"</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span>(e1) &#123;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">	&#125; <span class="keyword">catch</span>(e2) &#123;</span><br><span class="line">		xmlHttp = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>获取非Microsoft IE</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!xmlHttp &amp;&amp; <span class="keyword">typeof</span> XMLHttpRequest != <span class="string">'undefined'</span>) &#123;</span><br><span class="line">	xmlHttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2、打开连接，通过异步传输，发送参数到AjaxServlet，返回符合条件的XML-JSON文档或者普通文本"><a href="#2、打开连接，通过异步传输，发送参数到AjaxServlet，返回符合条件的XML-JSON文档或者普通文本" class="headerlink" title="2、打开连接，通过异步传输，发送参数到AjaxServlet，返回符合条件的XML/JSON文档或者普通文本"></a>2、打开连接，通过异步传输，发送参数到AjaxServlet，返回符合条件的XML/JSON文档或者普通文本</h2><p>从表单中获取用户ID</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ID = <span class="built_in">document</span>.getElementById(<span class="string">"ID"</span>).value;</span><br><span class="line"><span class="keyword">if</span> ((ID == <span class="literal">null</span>) || (ID ==  <span class="string">""</span>)) &#123;</span><br><span class="line">	alert(<span class="string">"请输入ID！"</span>);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"AjaxServlet?ID="</span> + ID + <span class="string">"&amp;random="</span> + <span class="built_in">Math</span>.random();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>GET</li>
+</ul>
+<p>打开服务器连接，实际上是跟浏览器地址栏上输入 AjaxServlet?ID=xxx 是一样的</p>
+<p>最后一个参数：false（同步）就是等待并处理完返回数据后再继续往下走，true（异步）就是 不等待，也就是所谓的异步获取数据！通常为true</p>
+<p>当readystate变化时，一个名为 complete() 的方法将被触发</p>
+<p>不用 complete() ，因为不是函数调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xmlHttp.open(<span class="string">"GET"</span>, url, <span class="literal">true</span>);</span><br><span class="line">xmlHttp.onreadystatechange = complete;</span><br><span class="line">xmlHttp.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>POST</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xmlHttp.open(<span class="string">"POST"</span>, url, <span class="literal">true</span>);</span><br><span class="line">xmlHttp.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">xmlHttp.send(<span class="string">"ID=123456"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="3、处理返回结果"><a href="#3、处理返回结果" class="headerlink" title="3、处理返回结果"></a>3、处理返回结果</h2><p>当<code>readyState</code>为状态4表示：服务器已经完成对请求的处理</p>
+<ul>
+<li>0:请求还没有建立（open执行前）</li>
+<li>1:请求建立了还没发送（执行了open）</li>
+<li>2:请求正式发送（执行了send）</li>
+<li>3:请求已受理，有部分数据可以用，但还没有处理完成</li>
+<li>4:请求完全处理完成</li>
+</ul>
+<p><code>.status</code>为200表示返回成功</p>
+<p><code>getText</code>为普通文本返回；<code>getXML</code>以XML文档返回；<code>getJSON</code>以JSON文档返回，json数据的处理统一先用<code>.responseText</code>作为一个字符串接收后 再转为json对象进行处理</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">complete</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (xmlHttp.readyState == <span class="number">4</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (xmlHttp.status == <span class="number">200</span>) &#123;</span><br><span class="line">			<span class="keyword">var</span> ID = <span class="built_in">document</span>.getElementById(<span class="string">"ID"</span>).value;</span><br><span class="line">			<span class="keyword">if</span> (ID == <span class="string">"getTXT"</span>) &#123;</span><br><span class="line">				<span class="keyword">var</span> str = xmlHttp.responseText;</span><br><span class="line">				alert(str);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (ID == <span class="string">"getXML"</span>) &#123;</span><br><span class="line">				<span class="keyword">var</span> type = xmlHttp.responseXML.getElementsByTagName(<span class="string">"Username"</span>);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; type.length; i++) &#123;</span><br><span class="line">					<span class="keyword">var</span> str = type[i].firstChild.data;</span><br><span class="line">					alert(str);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (ID == <span class="string">"getJSON"</span>) &#123;</span><br><span class="line">				<span class="keyword">var</span> str = xmlHttp.responseText;</span><br><span class="line">				<span class="keyword">var</span> json = <span class="built_in">eval</span>(<span class="string">'('</span> + str + <span class="string">')'</span>);</span><br><span class="line">				alert(json.username);</span><br><span class="line">				alert(json.age);</span><br><span class="line">				alert(json.sex);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (ID == <span class="string">"getJSON2"</span>) &#123;</span><br><span class="line">				<span class="keyword">var</span> str = xmlHttp.responseText;</span><br><span class="line">				<span class="keyword">var</span> json = <span class="built_in">eval</span>(<span class="string">'('</span> + str + <span class="string">')'</span>);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; json.length; i++) &#123;</span><br><span class="line">					alert(json[i].username);</span><br><span class="line">					alert(json[i].age);</span><br><span class="line">					alert(json[i].sex);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			alert(<span class="string">"出错！"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>虽然说，现在AJAX都不用原生的了。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://www.coyeah.top">Coyeah Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://www.coyeah.top/2018/02/02/原生AJAX实现/">http://www.coyeah.top/2018/02/02/原生AJAX实现/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/JavaScript/">JavaScript</a>
+            
+              <a href="/tags/AJAX/">AJAX</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/03/26/css填充剩余宽度问题/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">css填充剩余宽度问题</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/01/22/JS-DIV的左右动画滑动/">
+        <span class="next-text nav-default">JS-DIV的左右动画滑动</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:Coyeah_chen@outlook.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Coyeah" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/coyeah-21/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2018 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Coyeah Chen</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>
