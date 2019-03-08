@@ -200,6 +200,65 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2019/03/08/浅谈对AST的理解——动手写写Babel插件/">浅谈对AST的理解——动手写写Babel插件</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-03-08
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2019/03/08/浅谈对AST的理解——动手写写Babel插件/" data-title="浅谈对AST的理解——动手写写Babel插件">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>AST，Abstract Syntax Tree，抽象语法树。</p>
+<p>以前在准备面试的时候，在看 webpack 原理和 babel 原理的时候都提到 AST，但是对于 AST 的概念是一知半解的。趁这个机会捋一捋这一块的知识点。</p>
+<p>简单描述一下 webpack 的原理，就是：</p>
+<ol>
+<li>读取文件分析模块依赖</li>
+<li>对模块进行解析执行（深度遍历）</li>
+<li>针对不同的模块使用相对应的 loader</li>
+<li>编译模块，生成抽象语法树（AST）</li>
+<li>循环遍历 AST 树，拼接输出 JavaScript</li>
+</ol>
+<p>再简单的描述下 babel 的原理，就是：babel 解析成 AST，然后用插件更改 AST，最后由 babel 输出代码。</p>
+          <div class="read-more">
+            <a href="/2019/03/08/浅谈对AST的理解——动手写写Babel插件/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2019/03/03/9012博客扫灰，看看阿丽塔的大眼睛/">9012博客扫灰，看看阿丽塔的大眼睛</a>
         
       </h1>
@@ -664,60 +723,6 @@
 <p>但是为什么不用网格布局来实现呢，主要是因为圣杯布局里，中间盒子是可以优先渲染的，代码上它是优先于两侧的盒子。</p>
           <div class="read-more">
             <a href="/2018/06/20/CSS布局：圣杯与flex/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/06/13/React组件的生命周期/">React组件的生命周期</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-06-13
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/06/13/React组件的生命周期/" data-title="React组件的生命周期">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="React组件的生命周期可分为三个状态："><a href="#React组件的生命周期可分为三个状态：" class="headerlink" title="React组件的生命周期可分为三个状态："></a>React组件的生命周期可分为三个状态：</h2><p>挂载、更新、卸载。</p>
-<ul>
-<li>Mounting: 已插入真实DOM;</li>
-<li>Updating: 正在被重新渲染;</li>
-<li>Unmounting: 已移除真实DOM;</li>
-</ul>
-          <div class="read-more">
-            <a href="/2018/06/13/React组件的生命周期/" class="read-more-link">阅读更多</a>
           </div>
         
       
