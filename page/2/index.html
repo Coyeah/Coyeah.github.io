@@ -200,6 +200,58 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/06/20/CSS布局：圣杯与flex/">CSS布局：圣杯与flex</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-20
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/06/20/CSS布局：圣杯与flex/" data-title="CSS布局：圣杯与flex">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="关于圣杯布局"><a href="#关于圣杯布局" class="headerlink" title="关于圣杯布局"></a>关于圣杯布局</h2><p>描述下圣杯布局，有点类似于网格布局的三列式，可以理解为中间列是杯身，两侧则为两个杯耳。不同于网格布局的是只有三列一行。</p>
+<p><img src="https://www.coyeah.top/image/float_css_1.jpg" alt="float_css_1.jpg"></p>
+<p>两侧的盒子固定宽度，中间盒子自适应宽度。</p>
+<p>但是为什么不用网格布局来实现呢，主要是因为圣杯布局里，中间盒子是可以优先渲染的，代码上它是优先于两侧的盒子。</p>
+          <div class="read-more">
+            <a href="/2018/06/20/CSS布局：圣杯与flex/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/06/13/React组件的生命周期/">React组件的生命周期</a>
         
       </h1>
@@ -660,60 +712,6 @@
 </blockquote>
           <div class="read-more">
             <a href="/2018/05/06/一些前端笔试题/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/05/01/作用域与闭包/">作用域与闭包</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-05-01
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/05/01/作用域与闭包/" data-title="作用域与闭包">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><blockquote>
-<p>作用域是一套规矩，用于确定何处以及如何查找变量（标识符）。</p>
-</blockquote>
-<p>在JavaScript中，作用域的界定是由变量决定的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> A = <span class="string">"Tony"</span>;  <span class="comment">// 全局变量</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  A = <span class="string">"Tony"</span>;  <span class="comment">// 还是全局变量</span></span><br><span class="line">  <span class="keyword">var</span> B = <span class="string">"Ben"</span>;  <span class="comment">// 局部变量</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(A);  <span class="comment">// Tony</span></span><br><span class="line"><span class="built_in">console</span>.log(B);  <span class="comment">// Uncaught ReferenceError: B is not defined</span></span><br></pre></td></tr></table></figure>
-<p>在函数中用var定义变量，则为局部变量，在其函数范围内调用是会报错的。因此，f1就是B的作用域。</p>
-          <div class="read-more">
-            <a href="/2018/05/01/作用域与闭包/" class="read-more-link">阅读更多</a>
           </div>
         
       

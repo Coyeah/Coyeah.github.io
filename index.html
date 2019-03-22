@@ -200,6 +200,71 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2019/03/22/处理二进制流的小白级玩法/">处理二进制流的小白级玩法</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-03-22
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2019/03/22/处理二进制流的小白级玩法/" data-title="处理二进制流的小白级玩法">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>事件的起源是 POST 请求后后端返回了一串二进制流，告诉我这就是 Excel，问我前端能不能处理。让我衍生出一个想法，前端是不是可以不通过服务器对文件下载。很多次在处理批量数据的时候，愁着怎么把数据对象用文件保存下来。说来就来。</p>
+<h1 id="浏览器玩二进制"><a href="#浏览器玩二进制" class="headerlink" title="浏览器玩二进制"></a>浏览器玩二进制</h1><h2 id="Blob-对象"><a href="#Blob-对象" class="headerlink" title="Blob 对象"></a>Blob 对象</h2><blockquote>
+<p>Blob 对象表示一个不可变、原始数据的类文件对象。Blob 表示的不一定是JavaScript原生格式的数据。File 接口基于Blob，继承了 blob 的功能并将其扩展使其支持用户系统上的文件。—— MDN</p>
+</blockquote>
+<p>浏览器中的 Blob 和 MYSQL 中的 BLOB 类型在概念上有点区别。MYSQL 中的 BLOB 类型就只是个二进制数据容器，浏览器中的 Blob 除了存放二进制数据，还可以设置 MINE 类型，相当于对文件的存储。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> blob = <span class="keyword">new</span> Blob(<span class="built_in">Array</span>, Options);</span><br></pre></td></tr></table></figure>
+<p>通过构造方法，创建一个 Blob 对象，两个属性一个方法。传入值必须是是数组类型。</p>
+<ul>
+<li>blob.size: Blob 对象中所包含数据的大小（字节）</li>
+<li>blob.type: Blob 对象所包含数据的MIME类型</li>
+<li>blob.slice: 对 Blob 对象进行截取，返回一个新的 Blob 对象</li>
+</ul>
+<p>除了对文件的处理，Blob 对象通过截取可以对大文件类型分段上传。</p>
+<h2 id="URL-对象"><a href="#URL-对象" class="headerlink" title="URL 对象"></a>URL 对象</h2><p>Blob 对象要被使用，可以通过 URL.createObjectURL 方法，官方解释：</p>
+<blockquote>
+<p>URL.createObjectURL() 静态方法会创建一个 DOMString，其中包含一个表示参数中给出的对象的URL。这个 URL 的生命周期和创建它的窗口中的 document 绑定。这个新的URL 对象表示指定的 File 对象或 Blob 对象。 —— MDN</p>
+</blockquote>
+          <div class="read-more">
+            <a href="/2019/03/22/处理二进制流的小白级玩法/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2019/03/08/浅谈对AST的理解——动手写写Babel插件/">浅谈对AST的理解——动手写写Babel插件</a>
         
       </h1>
@@ -671,58 +736,6 @@
 <p>对于64位浮点数来说，大于1的最小浮点数相当于二进制的1.00 … 001，小数点后面有连续的51个零。</p>
           <div class="read-more">
             <a href="/2018/06/27/浮点数比较/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/06/20/CSS布局：圣杯与flex/">CSS布局：圣杯与flex</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-06-20
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/06/20/CSS布局：圣杯与flex/" data-title="CSS布局：圣杯与flex">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="关于圣杯布局"><a href="#关于圣杯布局" class="headerlink" title="关于圣杯布局"></a>关于圣杯布局</h2><p>描述下圣杯布局，有点类似于网格布局的三列式，可以理解为中间列是杯身，两侧则为两个杯耳。不同于网格布局的是只有三列一行。</p>
-<p><img src="https://www.coyeah.top/image/float_css_1.jpg" alt="float_css_1.jpg"></p>
-<p>两侧的盒子固定宽度，中间盒子自适应宽度。</p>
-<p>但是为什么不用网格布局来实现呢，主要是因为圣杯布局里，中间盒子是可以优先渲染的，代码上它是优先于两侧的盒子。</p>
-          <div class="read-more">
-            <a href="/2018/06/20/CSS布局：圣杯与flex/" class="read-more-link">阅读更多</a>
           </div>
         
       
