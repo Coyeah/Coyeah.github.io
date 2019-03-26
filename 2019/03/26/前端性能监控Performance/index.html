@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="记录一点技术记录一点生活">
+  <meta name="description" content="前端性能监控Performance">
 
 
 
@@ -42,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://www.coyeah.top/">
+<link rel="canonical" href="http://www.coyeah.top/2019/03/26/前端性能监控Performance/">
 
 
 
@@ -98,7 +98,7 @@
   window.config = {"leancloud":{"enable":true,"app_id":"S24nOfvDVMXopIxtstnGPxbo-gzGzoHsz","app_key":"ze4sgJXBhhjroXU9A45dTdMb"},"toc":true,"fancybox":true,"pjax":true};
 </script>
 
-    <title> Coyeah's blog </title>
+    <title> 前端性能监控Performance - Coyeah's blog </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -192,15 +192,11 @@
           <div id="content" class="content">
             
   
-  <section id="posts" class="posts">
-    
-      
-        
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2019/03/26/前端性能监控Performance/">前端性能监控Performance</a>
+          前端性能监控Performance
         
       </h1>
 
@@ -219,15 +215,18 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-Performance"><span class="toc-text">Web Performance</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#window-Performance"><span class="toc-text">window.Performance</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#memory"><span class="toc-text">memory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#navigation"><span class="toc-text">navigation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#timing"><span class="toc-text">timing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#redirect"><span class="toc-text">redirect</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fetch"><span class="toc-text">fetch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#domainLookUp"><span class="toc-text">domainLookUp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#connect"><span class="toc-text">connect</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#request-amp-response"><span class="toc-text">request &amp; response</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unloadEvent"><span class="toc-text">unloadEvent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dom"><span class="toc-text">dom</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loadEvent"><span class="toc-text">loadEvent</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#getEntries"><span class="toc-text">getEntries()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#now"><span class="toc-text">now()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能指标"><span class="toc-text">性能指标</span></a></li></ol>
+    </div>
+  </div>
+
 
 
     <div class="post-content">
       
-        
-        
-
-        
-          <h1 id="Web-Performance"><a href="#Web-Performance" class="headerlink" title="Web Performance"></a>Web Performance</h1><p>前端开发越来越注重性能上的要求，在开发过程中就开始得开始思考 JavaScript 运行的效率问题。我在开发的时候往往搞不清楚我的 JavaScript 代码运行了多长时间，感觉很长，又感觉还可以。这样的情况经常发生，没有一个指标或者数值可以作为参考和观察。</p>
+        <h1 id="Web-Performance"><a href="#Web-Performance" class="headerlink" title="Web Performance"></a>Web Performance</h1><p>前端开发越来越注重性能上的要求，在开发过程中就开始得开始思考 JavaScript 运行的效率问题。我在开发的时候往往搞不清楚我的 JavaScript 代码运行了多长时间，感觉很长，又感觉还可以。这样的情况经常发生，没有一个指标或者数值可以作为参考和观察。</p>
 <p>HTML5 中的 window.performance 就是为了解决这个问题。</p>
 <blockquote>
 <p>Web Performance API允许网页访问某些函数来测量网页和Web应用程序的性能，包括 Navigation Timing API和高分辨率时间数据。—— MDN</p>
@@ -307,529 +306,74 @@
 <p><strong>参考资料</strong></p>
 <p><a href="http://www.cnblogs.com/xiaohuochai/p/6523397.html" target="_blank" rel="noopener">web计时机制——performance对象</a><br><a href="https://www.jianshu.com/p/447d90911e71" target="_blank" rel="noopener">window.performance</a><br><a href="https://www.cnblogs.com/yuqing6/p/8463113.html" target="_blank" rel="noopener">使用performance进行网页性能监控</a></p>
 
-        
       
     </div>
 
     
+      
+      
 
-    
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://www.coyeah.top">Coyeah Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://www.coyeah.top/2019/03/26/前端性能监控Performance/">http://www.coyeah.top/2019/03/26/前端性能监控Performance/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
 
-  </article>
+
 
       
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/03/22/处理二进制流的小白级玩法/">处理二进制流的小白级玩法</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-03-22
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2019/03/22/处理二进制流的小白级玩法/" data-title="处理二进制流的小白级玩法">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
       
-        
-        
-          
-        
+    
 
+    
+      <footer class="post-footer">
         
-          <p>事件的起源是 POST 请求后后端返回了一串二进制流，告诉我这就是 Excel，问我前端能不能处理。让我衍生出一个想法，前端是不是可以不通过服务器对文件下载。很多次在处理批量数据的时候，愁着怎么把数据对象用文件保存下来。说来就来。</p>
-<h1 id="浏览器玩二进制"><a href="#浏览器玩二进制" class="headerlink" title="浏览器玩二进制"></a>浏览器玩二进制</h1><h2 id="Blob-对象"><a href="#Blob-对象" class="headerlink" title="Blob 对象"></a>Blob 对象</h2><blockquote>
-<p>Blob 对象表示一个不可变、原始数据的类文件对象。Blob 表示的不一定是JavaScript原生格式的数据。File 接口基于Blob，继承了 blob 的功能并将其扩展使其支持用户系统上的文件。—— MDN</p>
-</blockquote>
-<p>浏览器中的 Blob 和 MYSQL 中的 BLOB 类型在概念上有点区别。MYSQL 中的 BLOB 类型就只是个二进制数据容器，浏览器中的 Blob 除了存放二进制数据，还可以设置 MINE 类型，相当于对文件的存储。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> blob = <span class="keyword">new</span> Blob(<span class="built_in">Array</span>, Options);</span><br></pre></td></tr></table></figure>
-<p>通过构造方法，创建一个 Blob 对象，两个属性一个方法。传入值必须是是数组类型。</p>
-<ul>
-<li>blob.size: Blob 对象中所包含数据的大小（字节）</li>
-<li>blob.type: Blob 对象所包含数据的MIME类型</li>
-<li>blob.slice: 对 Blob 对象进行截取，返回一个新的 Blob 对象</li>
-</ul>
-<p>除了对文件的处理，Blob 对象通过截取可以对大文件类型分段上传。</p>
-<h2 id="URL-对象"><a href="#URL-对象" class="headerlink" title="URL 对象"></a>URL 对象</h2><p>Blob 对象要被使用，可以通过 URL.createObjectURL 方法，官方解释：</p>
-<blockquote>
-<p>URL.createObjectURL() 静态方法会创建一个 DOMString，其中包含一个表示参数中给出的对象的URL。这个 URL 的生命周期和创建它的窗口中的 document 绑定。这个新的URL 对象表示指定的 File 对象或 Blob 对象。 —— MDN</p>
-</blockquote>
-          <div class="read-more">
-            <a href="/2019/03/22/处理二进制流的小白级玩法/" class="read-more-link">阅读更多</a>
+          <div class="post-tags">
+            
+              <a href="/tags/前端/">前端</a>
+            
+              <a href="/tags/JavaScript/">JavaScript</a>
+            
+              <a href="/tags/HTML5/">HTML5</a>
+            
           </div>
         
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/03/08/浅谈对AST的理解——动手写写Babel插件/">浅谈对AST的理解——动手写写Babel插件</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-03-08
-        </span>
         
         
-        <span class="post-visits" data-url="/2019/03/08/浅谈对AST的理解——动手写写Babel插件/" data-title="浅谈对AST的理解——动手写写Babel插件">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
+  <nav class="post-nav">
     
     
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>AST，Abstract Syntax Tree，抽象语法树。</p>
-<p>以前在准备面试的时候，在看 webpack 原理和 babel 原理的时候都提到 AST，但是对于 AST 的概念是一知半解的。趁这个机会捋一捋这一块的知识点。</p>
-<p>简单描述一下 webpack 的原理，就是：</p>
-<ol>
-<li>读取文件分析模块依赖</li>
-<li>对模块进行解析执行（深度遍历）</li>
-<li>针对不同的模块使用相对应的 loader</li>
-<li>编译模块，生成抽象语法树（AST）</li>
-<li>循环遍历 AST 树，拼接输出 JavaScript</li>
-</ol>
-<p>再简单的描述下 babel 的原理，就是：babel 解析成 AST，然后用插件更改 AST，最后由 babel 输出代码。</p>
-          <div class="read-more">
-            <a href="/2019/03/08/浅谈对AST的理解——动手写写Babel插件/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/03/03/9012博客扫灰，看看阿丽塔的大眼睛/">9012博客扫灰，看看阿丽塔的大眼睛</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-03-03
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2019/03/03/9012博客扫灰，看看阿丽塔的大眼睛/" data-title="9012博客扫灰，看看阿丽塔的大眼睛">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h1 id="阿丽塔：战斗天使"><a href="#阿丽塔：战斗天使" class="headerlink" title="阿丽塔：战斗天使"></a>阿丽塔：战斗天使</h1><p>看看阿丽塔的大眼睛，一个大眼睛的像素就有800万了！看完《阿丽塔：战斗天使》，打斗场面很刺激，从特效上来说绝对是好莱坞电影工业顶级的水平，一部两小时的电影引起了我对原作《铳梦》的好奇心和后续的剧情发展，二刷得去体验下IMAX。</p>
-<p>整个故事中，雨果很有梦想，他幻想着天上的世界很美好，结果还是死在了管道之上，看完以后感觉雨果的梦想让人感觉很可笑，看他竭尽一生想进入撒冷又会让人觉得很难过，在废铁镇上的人无论怎么努力都是没有办法上撒冷的。而阿丽塔的成长给到我很大的触动，武力值爆表，内心又天真幼稚人畜无害，“不要无缘无故为人付出，不管你认为他们有多么善良或者多么值得”，当中有很多语录很引人深省的，也激起我扫灰博客的冲动。</p>
-<p><img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike933%2C5%2C5%2C933%2C330/sign=fbdbd432815494ee932f074b4c9c8b9b/30adcbef76094b36a4aa4e60aecc7cd98d109d06.jpg" alt="阿丽塔海报"></p>
-<h1 id="9012博客扫灰"><a href="#9012博客扫灰" class="headerlink" title="9012博客扫灰"></a>9012博客扫灰</h1><p>扫灰扫灰。半年没有写过博客了，在工作中遇到过很多问题，顺手就用笔记本记录下来了。老电脑也封尘了，也就一直没重启博客。直至今日吧。大四开始就一路忙着做项目，找工作，攒经验的。打开笔记本，时间对上了一年前，是我第一份实习的记录，现在已经是第三份实习了。从 HTML + CSS + JS 到现在开始工程化的写起前端了，从广州到上海，从在初创公司码字到在上市公司 Coding，也算是一种进步吧。</p>
-<p>2018的总结，2019的开始！</p>
-          <div class="read-more">
-            <a href="/2019/03/03/9012博客扫灰，看看阿丽塔的大眼睛/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/08/14/入门浅记HTTP缓存机制/">入门浅记HTTP缓存机制</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-08-14
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/08/14/入门浅记HTTP缓存机制/" data-title="入门浅记HTTP缓存机制">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h1 id="HTTP简述"><a href="#HTTP简述" class="headerlink" title="HTTP简述"></a>HTTP简述</h1><p>前端关于网络协议的入门，接触得最多最主要的就是HTTP协议。浏览器与服务器之间的通信协议，从浏览器发出请求，由服务器响应请求。图解如下：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/13/16531214dde78290?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="HTTP图解"></p>
-<p>HTTP报文是浏览器与服务器之间通信的载体（数据块），由报文首部（附加信息，如cookie、缓存信息等）和报文主体（传输的数据内容）构成。</p>
-<p>请求报文：<code>浏览器 =&gt; 服务器</code>；报文首部构成：请求行（HTTP方法、URI、HTTP版本）、请求首部字段、其他。</p>
-<p>响应报文：<code>服务器 =&gt; 浏览器</code>；报文首部构成：状态行（HTTP版本、状态码）、响应首部字段、其他。</p>
-          <div class="read-more">
-            <a href="/2018/08/14/入门浅记HTTP缓存机制/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/07/19/antdpro-从百思不解到豁然开朗/">antdpro-从百思不解到豁然开朗</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-07-19
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/07/19/antdpro-从百思不解到豁然开朗/" data-title="antdpro-从百思不解到豁然开朗">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p><a href="https://pro.ant.design/index-cn" target="_blank" rel="noopener">ANT DESIGN PRO - 开箱即用的中台前端/设计解决方案</a></p>
-<p>这是一个爬坑的过程，感觉像拿着左轮PK高达，甚至一度怀疑人生。在做电子货币交易系统这个项目的时候，也是我第一个说出来用antd，感觉就像给自己挖了一个坑，因为随后就看到了antd pro，然后就用上了。由于等级相差太多了，所以上手第一步，显示把它所用到的知识点都去学一遍。react-router、redux-saga、dva、mockJs……好了吧，学习好了基础知识点，要上手了。好家伙，又是一道难题。整个项目结构就九曲十八弯。写上一片文章纪念一下我所爬过的坑。</p>
-<p>踏上了解antd pro源码的学习路径（只是一部分，纯个人理解和学习，欢迎指正）</p>
-          <div class="read-more">
-            <a href="/2018/07/19/antdpro-从百思不解到豁然开朗/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/07/16/阿里第二记-2018年秋季前端应届在线评测/">阿里第二记-2018年秋季前端应届在线评测</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-07-16
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/07/16/阿里第二记-2018年秋季前端应届在线评测/" data-title="阿里第二记-2018年秋季前端应届在线评测">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>时隔四个月，也等待了四个月，秋招又来了。对上一次感觉是因为误操作所以没等来电话，学生时期的最后一次机会了。</p>
-<p>还是30min的评测！</p>
-<blockquote>
-<p>题目：实现mergePromise函数，把传进去的数组顺序先后执行，并且把返回的数据先后放到数组（data）中。</p>
-</blockquote>
-          <div class="read-more">
-            <a href="/2018/07/16/阿里第二记-2018年秋季前端应届在线评测/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/07/10/拉升的综合实践/">拉升的综合实践</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-07-10
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/07/10/拉升的综合实践/" data-title="拉升的综合实践">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p><em>[暂未完结]</em></p>
-<p>第一次拿到一个如此完整的任务，又能有一位有经验的“师兄”带领和指导, 非常Lucky！试一次大幅拉高自己的机会，要做到完美，还得有个复盘。</p>
-          <div class="read-more">
-            <a href="/2018/07/10/拉升的综合实践/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/06/30/JavaScript中的浅拷贝与深拷贝/">JavaScript中的浅拷贝与深拷贝</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-06-30
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/06/30/JavaScript中的浅拷贝与深拷贝/" data-title="JavaScript中的浅拷贝与深拷贝">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>拷贝、复制、克隆……</p>
-<p>在JavaScript中的Object类型中，拷贝是有分为浅拷贝与深拷贝的。</p>
-<h2 id="JavaScript的变量类型"><a href="#JavaScript的变量类型" class="headerlink" title="JavaScript的变量类型"></a>JavaScript的变量类型</h2><p>（1）变量类型：</p>
-<p>Undefined, Null, Boolean, Number, String。在ES6中新添加了一种Symbol。</p>
-<p>这样一种类型的变量是按值存放的。存放在栈内存中的简单数据段，可以直接访问。不存在深拷贝或者浅拷贝的区别，拷贝就是拷贝。</p>
-<p>（2）引用类型：</p>
-<p>Object</p>
-<p>存放在堆内存中的对象，变量保存的是一个指针，指向一个地址。当需要访问引用类型（如对象、数组等）的值的时候，首先从栈中获取该对象的地址指针，再从堆内存中提取所要的数据。</p>
-          <div class="read-more">
-            <a href="/2018/06/30/JavaScript中的浅拷贝与深拷贝/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/06/28/浅析面向对象开发/">浅析面向对象开发</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-06-28
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/06/28/浅析面向对象开发/" data-title="浅析面向对象开发">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>模拟餐厅经营。</p>
-<h2 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h2><blockquote>
-<p>我们现在要开一个餐厅啦，餐厅里面有服务员，有厨师，有顾客。学习面向对象，为餐厅和几个角色创建自己的类吧。<br>餐厅可以招聘或者解雇职员，职员越多，就越能够满足更多的顾客需求，从而赚取更多的钱<br>餐厅里的容量是有限的，当顾客坐满了，其他顾客需要排队<br>服务员的工作有两个职责，一个是负责点菜，另外一个是上菜<br>厨师的职责就一个，烹饪食物<br>顾客可以做两件事情，一个是点菜，一个是吃</p>
-</blockquote>
-<p>这一系列写了很久。主要使用到的设计模式是职责链模式和观察者模式。</p>
-<p>工厂模式、命令模式、适配器模式、桥接模式这样的都会穿插在其中，可能是平时用习惯了，所以没有刻意是哪种设计模式。</p>
-<p>要有复盘的好习惯，这个模拟还会有些可视化的地方需要改进和添加，所以还在继续更新。</p>
-          <div class="read-more">
-            <a href="/2018/06/28/浅析面向对象开发/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-      
-  <nav class="pagination">
-    
-    
-      <a class="next" href="/page/2/">
-        <span class="next-text">下一页</span>
+      <a class="next" href="/2019/03/22/处理二进制流的小白级玩法/">
+        <span class="next-text nav-default">处理二进制流的小白级玩法</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     
   </nav>
 
 
+      </footer>
     
-  </section>
+
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -918,6 +462,11 @@
     </div>
 
     
+  
+  
+
+  
+
 
 
     

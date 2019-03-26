@@ -200,6 +200,64 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/06/27/浮点数比较/">浮点数比较</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-27
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/06/27/浮点数比较/" data-title="浮点数比较">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <blockquote>
+<p>0.1 + 0.2 == 0.3  // false</p>
+</blockquote>
+<p>在JavaScript中浮点数的运算中会出现这样的问题。</p>
+<p>当你输出一下<code>0.1 + 0.2</code>的时候，得出的结果是</p>
+<p><code>0.30000000000000004</code></p>
+<p>在试一下<code>0.1 + 0.2 - 0.3</code></p>
+<p><code>5.551115123125783e-17</code></p>
+<p>为了解决这个问题，在新的ES6引入了一个极小的常量<code>Number.EPSILON</code>，它表示1与大于1的最小浮点数的差。</p>
+<p>对于64位浮点数来说，大于1的最小浮点数相当于二进制的1.00 … 001，小数点后面有连续的51个零。</p>
+          <div class="read-more">
+            <a href="/2018/06/27/浮点数比较/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/06/20/CSS布局：圣杯与flex/">CSS布局：圣杯与flex</a>
         
       </h1>
@@ -661,57 +719,6 @@
 </ol>
           <div class="read-more">
             <a href="/2018/05/06/call-apply-bind的理解/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/05/06/一些前端笔试题/">一些前端笔试题</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-05-06
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/05/06/一些前端笔试题/" data-title="一些前端笔试题">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="1-解析URL的参数"><a href="#1-解析URL的参数" class="headerlink" title="1.解析URL的参数"></a>1.解析URL的参数</h2><blockquote>
-<p>// 尽可能全面正确的解析一个任意url的所有参数为Object。<br>var url = ‘<a href="http://www.domain.com/?user=anonymous&amp;id=123&amp;id=456&amp;city=%E5%8C%97%E4%BA%AC&amp;enabled&#39;" target="_blank" rel="noopener">http://www.domain.com/?user=anonymous&amp;id=123&amp;id=456&amp;city=%E5%8C%97%E4%BA%AC&amp;enabled&#39;</a>;<br>parseParam(url);<br>结果：<br>{<br>   user: ‘anonymous’,<br>   id: [123, 456], // 重复出现的 key 要组装成数组，能被转成数字的就转成数字类型<br>   city: ‘北京’, // 中文<br>   enabled: true, // 未指定值的 key 约定值为 true<br>}</p>
-</blockquote>
-          <div class="read-more">
-            <a href="/2018/05/06/一些前端笔试题/" class="read-more-link">阅读更多</a>
           </div>
         
       
