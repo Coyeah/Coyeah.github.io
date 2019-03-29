@@ -200,6 +200,65 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2019/03/29/用JavaScript做遗传算法的小Demo/">用JavaScript做遗传算法的小Demo</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-03-29
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2019/03/29/用JavaScript做遗传算法的小Demo/" data-title="用JavaScript做遗传算法的小Demo">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>前言：有一次在知乎上看到一篇文章，介绍遗传算法的，并且用遗传算法来训练一群像素小鸟，优化出一只通关相当厉害的像素鸟。又一次在知乎上看到一篇文章，用 JavaScript 来做一个遗传算法的小 Demo，就是本文要介绍的小 Demo，学习那位大兄弟的代码出来的给自己练个手，实在抱歉没能搜回那个大兄弟的项目地址，就没有 post 出来了。</p>
+<p><a href="https://www.coyeah.top/genea/">Demo 效果展示</a></p>
+<h1 id="遗传算法"><a href="#遗传算法" class="headerlink" title="遗传算法"></a>遗传算法</h1><blockquote>
+<p>遗传算法（Genetic Algorithm）是模拟达尔文生物进化论的自然选择和遗传学机理的生物进化过程的计算模型，是一种通过模拟自然进化过程搜索最优解的方法。</p>
+</blockquote>
+<p>初高中生物教过我们，基因是产生一条多肽链或功能 RNA 所需的全部核苷酸序列，带有遗传讯息的 DNA 片段称为基因。通过不同的基因组合，构建出不同的个体。而我们的目的，就是在一个种群里面，通过繁衍，即基因的不断组合最终获取到我们要的目标各地，就像我们要的是一只能够通一百关的像素小鸟。而在繁衍的过程中，要充分体现出随机性和优胜劣汰的遗传规则，所以与目标个体越相近的，则有着更大的机会被保留并生产出下一代，而在生产出下一代的过程中，还有参杂基因突变的可能性。</p>
+<p>简单来说就是从模仿染色体的结构不断地递归式组合,最后形成一个目标个体。</p>
+<h1 id="动手写-Demo"><a href="#动手写-Demo" class="headerlink" title="动手写 Demo"></a>动手写 Demo</h1><p>我们的目的是初始化一堆字符串，然后通过遗传算法，最终得到我们想要的字符串内容，<strong>You are more powerful than any other person.</strong></p>
+<p>该 Demo 中通过对字符串随机生成一个初始种群，然后组合形成新的种群，再进行组合……直至出现目标个体，或者超过预设的繁衍次数，毕竟总不可能让他不断地递归下去吧，因为有可能运气不好还真的不出现目标个体。</p>
+<p>一开始我看到这个的时候，我以为是以字符为单位，后来看到大兄弟的代码，其实更甚者是用 <strong>0</strong> 与 <strong>1</strong> 来作为基础单位。妙啊~</p>
+<p>Github 项目<a href="https://github.com/Coyeah/genea" target="_blank" rel="noopener">传送门</a>，如果喜欢，给我一个 Star。</p>
+          <div class="read-more">
+            <a href="/2019/03/29/用JavaScript做遗传算法的小Demo/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2019/03/26/前端性能监控Performance/">前端性能监控Performance</a>
         
       </h1>
@@ -225,6 +284,8 @@
       
         
         
+          
+        
 
         
           <h1 id="Web-Performance"><a href="#Web-Performance" class="headerlink" title="Web Performance"></a>Web Performance</h1><p>前端开发越来越注重性能上的要求，在开发过程中就开始得开始思考 JavaScript 运行的效率问题。我在开发的时候往往搞不清楚我的 JavaScript 代码运行了多长时间，感觉很长，又感觉还可以。这样的情况经常发生，没有一个指标或者数值可以作为参考和观察。</p>
@@ -233,80 +294,10 @@
 <p>Web Performance API允许网页访问某些函数来测量网页和Web应用程序的性能，包括 Navigation Timing API和高分辨率时间数据。—— MDN</p>
 </blockquote>
 <p>解读与记录下这个对象中的每一个字段。<code>console.log(window.performance)</code>把这个对象打印出来。</p>
-<p><a href="/image/performance.png">performance 对象</a></p>
-<h1 id="window-Performance"><a href="#window-Performance" class="headerlink" title="window.Performance"></a>window.Performance</h1><h2 id="memory"><a href="#memory" class="headerlink" title="memory"></a>memory</h2><p>memory 是 chrome 拓展的字段，唯 chrome 浏览器独有。</p>
-<ul>
-<li><strong>jsHeapSizeLimit</strong>：内存大小限制</li>
-<li><strong>totalJSHeapSize</strong>：可使用的内存</li>
-<li><strong>usedJSHeapSize</strong>：JavaScript 对象占用的内存</li>
-</ul>
-<h2 id="navigation"><a href="#navigation" class="headerlink" title="navigation"></a>navigation</h2><p>navigation 主要记录的是页面导航的信息，</p>
-<ul>
-<li><strong>redirectCount</strong>：页面加载前重定向的次数</li>
-<li><strong>type</strong>: 页面加载的导航类型，0-页面第一次加载，1-页面进行过重载，2-页面通过“后退”或“前进”打开的</li>
-</ul>
-<h2 id="timing"><a href="#timing" class="headerlink" title="timing"></a>timing</h2><p>timing 中记录的是在页面从点击回车到加载完成后不同事件所记录下的时间戳。</p>
-<p>从请求发生到加载完成整个过程中的时间流程如下图：</p>
-<p><a href="/image/performance_timing.png">从请求发生到加载完成整个过程中的时间流程</a></p>
-<h3 id="redirect"><a href="#redirect" class="headerlink" title="redirect"></a>redirect</h3><ul>
-<li><strong>redirectStart</strong>：当前页面重定向的开始时间。若重定向页面与当前页面跨域，则为0。</li>
-<li><strong>redirectEnd</strong>：当前页面重定向的结束时间。若重定向页面与当前页面跨域，则为0。</li>
-</ul>
-<h3 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h3><ul>
-<li><strong>fetchStart</strong>：浏览器准备好发起HTTP GET获取页面的时间。</li>
-</ul>
-<h3 id="domainLookUp"><a href="#domainLookUp" class="headerlink" title="domainLookUp"></a>domainLookUp</h3><ul>
-<li><strong>domainLookUpStart</strong>：查询当前页面 DNS 开始时间。若使用本地缓存或持久连接则与<code>fetchStart</code>相同。</li>
-<li><strong>domainLookUpEnd</strong>：查询当前页面 DNS 结束时间。若使用本地缓存或持久连接则与<code>fetchStart</code>相同。</li>
-</ul>
-<h3 id="connect"><a href="#connect" class="headerlink" title="connect"></a>connect</h3><ul>
-<li><strong>connectStart</strong>：浏览器尝试连接服务器的时间。</li>
-<li><strong>secureConnectionStart</strong>：浏览器尝试以 SSL 方式连接服务器的时间。若不使用 SSL 方式连接则为0。</li>
-<li><strong>connectEnd</strong>：浏览器成功连接服务器的时间。</li>
-</ul>
-<h3 id="request-amp-response"><a href="#request-amp-response" class="headerlink" title="request &amp; response"></a>request &amp; response</h3><ul>
-<li><strong>requestStart</strong>：浏览器开始请求页面的时间。</li>
-<li><strong>responseStart</strong>：浏览器接受到页面第一个字节的时间。</li>
-<li><strong>responseEnd</strong>：浏览器接受到页面所有内容的时间。</li>
-</ul>
-<h3 id="unloadEvent"><a href="#unloadEvent" class="headerlink" title="unloadEvent"></a>unloadEvent</h3><ul>
-<li><strong>unloadEventStart</strong>：前一个页面 unload 事件开始时间。若前一个页面与当前页面跨域，则为0。</li>
-<li><strong>unloadEventEnd</strong>：前一个页面 unload 事件结束时间。若前一个页面与当前页面跨域，则为0。</li>
-</ul>
-<h3 id="dom"><a href="#dom" class="headerlink" title="dom"></a>dom</h3><ul>
-<li><strong>domLoading</strong>：开始解析 DOM 树的时间，即 document.readyState 变为 “loading”。</li>
-<li><strong>domInteractive</strong>：完成解析 DOM 树的时间，即 document.readyState 变为 “interactive”。</li>
-<li><strong>domContentLoadedEventStart</strong>：开始加载页面内资源的时间，即发生 DOMContentLoaded 事件的时间。</li>
-<li><strong>domContentLoadedEventEnd</strong>：页面内资源加载完成的时间，即 DOMContentLoaded 事件已经发生且执行完所有事件处理程序的时间。</li>
-<li><strong>domComplete</strong>：DOM 树解析完成、页面内资源准备就绪的时间，即 document.readyState 变为 “complete”。</li>
-</ul>
-<h3 id="loadEvent"><a href="#loadEvent" class="headerlink" title="loadEvent"></a>loadEvent</h3><ul>
-<li><strong>loadEventStart</strong>：发生 load 事件的时间，也是 load 事件回调函数开始执行的时间。</li>
-<li><strong>loadEventEnd</strong>：load 事件已经完成且执行完所有事件处理程序的时间。</li>
-</ul>
-<p><em>在实际情况下，通过 performance.timing 属性可以找到 domInteractive、domContentLoadedEventStart、domContentLoadedEventEnd、domComplete、loadEventStart 和 loadEventEnd 这6个值。但是在单独获取的情况下，这6个值都为0。</em></p>
-<h2 id="getEntries"><a href="#getEntries" class="headerlink" title="getEntries()"></a>getEntries()</h2><p>该方法返回一个数组类型，包含页面中所有的HTTP资源请求。<em>IE8不支持</em></p>
-<ul>
-<li><strong>duration</strong>：加载时间。</li>
-<li><strong>name</strong>：资源的绝对路径。</li>
-<li><strong>entryType</strong>：资源类型。</li>
-<li><strong>initiatorType</strong>：发起请求的标签。</li>
-</ul>
-<h2 id="now"><a href="#now" class="headerlink" title="now()"></a>now()</h2><p>该方法返回从页面初始化到调用该方法时的毫秒数。<em>IE9不支持</em></p>
-<p>performance.now() 与 Date.now() 不同的是，返回了以微秒为单位的时间，更加精准。并且与 Date.now() 会受系统程序执行阻塞的影响不同，performance.now() 的时间是以恒定速率递增的，不受系统时间的影响（系统时间可被人为或软件调整）。</p>
-<p>Date.now()输出的是 UNIX 时间，即距离1970年1月1日0点的时间，而 performance.now() 输出的是相对于 performance.timing.navigationStart（页面初始化）的时间。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t0 = <span class="built_in">window</span>.performance.now();</span><br><span class="line">doSomething();</span><br><span class="line"><span class="keyword">var</span> t1 = <span class="built_in">window</span>.performance.now();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"doSomething函数执行了"</span> + (t1 - t0) + <span class="string">"毫秒."</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h1><p>通过 <code>performance.timing</code> 提供的各种时间戳，就可以知道从页面开始加载到完成这个过程中的每一步骤的用时，清楚的知道哪些耗时过长影响性能。</p>
-<ul>
-<li>重定向时间 = redirectEnd - redirectStart;</li>
-<li>DNS 查询时间 = domainLookUpEnd - domainLookUpStart;</li>
-<li>TCP 握手时间 = connectEnd - connectStart;</li>
-<li>HTTP 响应时间 = responseEnd - responseStart;</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  handleAddListener(<span class="string">'load'</span>, getTiming)</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleAddListener</span>(<span class="params">type, fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.addEventListener) &#123;</span><br><span class="line">      <span class="built_in">window</span>.addEventListener(type, fn)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">window</span>.attachEvent(<span class="string">'on'</span> + type, fn)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getTiming</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">var</span> time = performance.timing;</span><br><span class="line">      <span class="keyword">var</span> timingObj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> loadTime = (time.loadEventEnd - time.loadEventStart) / <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (loadTime &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          getTiming();</span><br><span class="line">        &#125;, <span class="number">200</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      timingObj[<span class="string">'重定向时间'</span>] = (time.redirectEnd - time.redirectStart) / <span class="number">1000</span>;</span><br><span class="line">      timingObj[<span class="string">'DNS解析时间'</span>] = (time.domainLookupEnd - time.domainLookupStart) / <span class="number">1000</span>;</span><br><span class="line">      timingObj[<span class="string">'TCP完成握手时间'</span>] = (time.connectEnd - time.connectStart) / <span class="number">1000</span>;</span><br><span class="line">      timingObj[<span class="string">'HTTP请求响应完成时间'</span>] = (time.responseEnd - time.requestStart) / <span class="number">1000</span>;</span><br><span class="line">      timingObj[<span class="string">'DOM开始加载前所花费时间'</span>] = (time.responseEnd - time.navigationStart) / <span class="number">1000</span>;</span><br><span class="line">      timingObj[<span class="string">'DOM加载完成时间'</span>] = (time.domComplete - time.domLoading) / <span class="number">1000</span>;</span><br><span class="line">      timingObj[<span class="string">'DOM结构解析完成时间'</span>] = (time.domInteractive - time.domLoading) / <span class="number">1000</span>;</span><br><span class="line">      timingObj[<span class="string">'脚本加载时间'</span>] = (time.domContentLoadedEventEnd - time.domContentLoadedEventStart) / <span class="number">1000</span>;</span><br><span class="line">      timingObj[<span class="string">'onload事件时间'</span>] = (time.loadEventEnd - time.loadEventStart) / <span class="number">1000</span>;</span><br><span class="line">      timingObj[<span class="string">'页面完全加载时间'</span>] = (timingObj[<span class="string">'重定向时间'</span>] + timingObj[<span class="string">'DNS解析时间'</span>] + timingObj[<span class="string">'TCP完成握手时间'</span>] + timingObj[<span class="string">'HTTP请求响应完成时间'</span>] + timingObj[<span class="string">'DOM结构解析完成时间'</span>] + timingObj[<span class="string">'DOM加载完成时间'</span>]);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (item <span class="keyword">in</span> timingObj) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(item + <span class="string">":"</span> + timingObj[item] + <span class="string">'毫秒(ms)'</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="built_in">console</span>.log(performance.timing);</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(timingObj)</span><br><span class="line">      <span class="built_in">console</span>.log(performance.timing);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<p><strong>参考资料</strong></p>
-<p><a href="http://www.cnblogs.com/xiaohuochai/p/6523397.html" target="_blank" rel="noopener">web计时机制——performance对象</a><br><a href="https://www.jianshu.com/p/447d90911e71" target="_blank" rel="noopener">window.performance</a><br><a href="https://www.cnblogs.com/yuqing6/p/8463113.html" target="_blank" rel="noopener">使用performance进行网页性能监控</a></p>
-
+<p><img src="/image/performance.png" alt="performance 对象"></p>
+          <div class="read-more">
+            <a href="/2019/03/26/前端性能监控Performance/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -746,61 +737,6 @@
 <p>存放在堆内存中的对象，变量保存的是一个指针，指向一个地址。当需要访问引用类型（如对象、数组等）的值的时候，首先从栈中获取该对象的地址指针，再从堆内存中提取所要的数据。</p>
           <div class="read-more">
             <a href="/2018/06/30/JavaScript中的浅拷贝与深拷贝/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/06/28/浅析面向对象开发/">浅析面向对象开发</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-06-28
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/06/28/浅析面向对象开发/" data-title="浅析面向对象开发">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>模拟餐厅经营。</p>
-<h2 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h2><blockquote>
-<p>我们现在要开一个餐厅啦，餐厅里面有服务员，有厨师，有顾客。学习面向对象，为餐厅和几个角色创建自己的类吧。<br>餐厅可以招聘或者解雇职员，职员越多，就越能够满足更多的顾客需求，从而赚取更多的钱<br>餐厅里的容量是有限的，当顾客坐满了，其他顾客需要排队<br>服务员的工作有两个职责，一个是负责点菜，另外一个是上菜<br>厨师的职责就一个，烹饪食物<br>顾客可以做两件事情，一个是点菜，一个是吃</p>
-</blockquote>
-<p>这一系列写了很久。主要使用到的设计模式是职责链模式和观察者模式。</p>
-<p>工厂模式、命令模式、适配器模式、桥接模式这样的都会穿插在其中，可能是平时用习惯了，所以没有刻意是哪种设计模式。</p>
-<p>要有复盘的好习惯，这个模拟还会有些可视化的地方需要改进和添加，所以还在继续更新。</p>
-          <div class="read-more">
-            <a href="/2018/06/28/浅析面向对象开发/" class="read-more-link">阅读更多</a>
           </div>
         
       

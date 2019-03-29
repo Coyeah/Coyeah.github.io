@@ -200,6 +200,61 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/06/28/浅析面向对象开发/">浅析面向对象开发</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-28
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/06/28/浅析面向对象开发/" data-title="浅析面向对象开发">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>模拟餐厅经营。</p>
+<h2 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h2><blockquote>
+<p>我们现在要开一个餐厅啦，餐厅里面有服务员，有厨师，有顾客。学习面向对象，为餐厅和几个角色创建自己的类吧。<br>餐厅可以招聘或者解雇职员，职员越多，就越能够满足更多的顾客需求，从而赚取更多的钱<br>餐厅里的容量是有限的，当顾客坐满了，其他顾客需要排队<br>服务员的工作有两个职责，一个是负责点菜，另外一个是上菜<br>厨师的职责就一个，烹饪食物<br>顾客可以做两件事情，一个是点菜，一个是吃</p>
+</blockquote>
+<p>这一系列写了很久。主要使用到的设计模式是职责链模式和观察者模式。</p>
+<p>工厂模式、命令模式、适配器模式、桥接模式这样的都会穿插在其中，可能是平时用习惯了，所以没有刻意是哪种设计模式。</p>
+<p>要有复盘的好习惯，这个模拟还会有些可视化的地方需要改进和添加，所以还在继续更新。</p>
+          <div class="read-more">
+            <a href="/2018/06/28/浅析面向对象开发/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/06/27/浮点数比较/">浮点数比较</a>
         
       </h1>
@@ -661,64 +716,6 @@
 <p>可是落实到实际开发就看傻了眼。</p>
           <div class="read-more">
             <a href="/2018/05/08/小白实例面向对象/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/05/06/call-apply-bind的理解/">call/apply/bind的理解</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-05-06
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/05/06/call-apply-bind的理解/" data-title="call/apply/bind的理解">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>call() &amp; apply() &amp; bind()</p>
-<ul>
-<li>都是用于改变函数的this对象的指向。</li>
-<li>bind是返回对应函数，便于稍后调用；call和apply则立刻调用。</li>
-</ul>
-<h2 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h2><ol>
-<li>是Function.prototype中的一个函数</li>
-<li>作用：给函数绑定一个对象，返回一个新函数，但该函数无prototype属性</li>
-<li>基本原理：使用apply()和闭包，返回包含apply()的闭包是的apply()绑定指定作用域但并未执行</li>
-</ol>
-          <div class="read-more">
-            <a href="/2018/05/06/call-apply-bind的理解/" class="read-more-link">阅读更多</a>
           </div>
         
       

@@ -232,7 +232,8 @@
 <p>Web Performance API允许网页访问某些函数来测量网页和Web应用程序的性能，包括 Navigation Timing API和高分辨率时间数据。—— MDN</p>
 </blockquote>
 <p>解读与记录下这个对象中的每一个字段。<code>console.log(window.performance)</code>把这个对象打印出来。</p>
-<p><a href="/image/performance.png">performance 对象</a></p>
+<p><img src="/image/performance.png" alt="performance 对象"></p>
+<a id="more"></a>
 <h1 id="window-Performance"><a href="#window-Performance" class="headerlink" title="window.Performance"></a>window.Performance</h1><h2 id="memory"><a href="#memory" class="headerlink" title="memory"></a>memory</h2><p>memory 是 chrome 拓展的字段，唯 chrome 浏览器独有。</p>
 <ul>
 <li><strong>jsHeapSizeLimit</strong>：内存大小限制</li>
@@ -246,7 +247,7 @@
 </ul>
 <h2 id="timing"><a href="#timing" class="headerlink" title="timing"></a>timing</h2><p>timing 中记录的是在页面从点击回车到加载完成后不同事件所记录下的时间戳。</p>
 <p>从请求发生到加载完成整个过程中的时间流程如下图：</p>
-<p><a href="/image/performance_timing.png">从请求发生到加载完成整个过程中的时间流程</a></p>
+<p><img src="/image/performance_timing.png" alt="从请求发生到加载完成整个过程中的时间流程"></p>
 <h3 id="redirect"><a href="#redirect" class="headerlink" title="redirect"></a>redirect</h3><ul>
 <li><strong>redirectStart</strong>：当前页面重定向的开始时间。若重定向页面与当前页面跨域，则为0。</li>
 <li><strong>redirectEnd</strong>：当前页面重定向的结束时间。若重定向页面与当前页面跨域，则为0。</li>
@@ -351,6 +352,12 @@
         
         
   <nav class="post-nav">
+    
+      <a class="prev" href="/2019/03/29/用JavaScript做遗传算法的小Demo/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">用JavaScript做遗传算法的小Demo</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
     
     
       <a class="next" href="/2019/03/22/处理二进制流的小白级玩法/">
