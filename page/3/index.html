@@ -200,6 +200,60 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/05/18/变量提升原理/">变量提升原理</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-05-18
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/05/18/变量提升原理/" data-title="变量提升原理">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h2><p>先有“蛋”（声明），后有“鸡”（赋值）。</p>
+<p>JavaScript变量提升的问题来源于编译器，引擎在解释JavaScript代码之前会先对其进行编译，编译阶段中的一部分工作就是要找到所有声明（仅仅是声明），并用合适的作用域进行关联。至于赋值，是执行阶段的任务，只会呆在原地乖乖等着被执行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我们看来</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 编译器看来</span></span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line">a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>变量提升的根本原理是：声明变量和赋值是分开的两个步骤。</p>
+<p>所以！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2018/05/18/变量提升原理/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/05/08/小白实例面向对象/">小白实例面向对象</a>
         
       </h1>
@@ -669,58 +723,6 @@
 <p>题目不难。<code>function (type, order) { //TODO }</code>，对表格中指定列的内容进行倒序或者正序的排列。</p>
           <div class="read-more">
             <a href="/2018/04/18/DOM节点层次的问题/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/04/18/回调地狱-promise/">回调地狱-promise</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-04-18
-        </span>
-        
-        
-        <span class="post-visits" data-url="/2018/04/18/回调地狱-promise/" data-title="回调地狱-promise">
-          阅读次数 0
-        </span>
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="Callback-Hell-回调地狱"><a href="#Callback-Hell-回调地狱" class="headerlink" title="Callback Hell(回调地狱)"></a>Callback Hell(回调地狱)</h2><p>今天遇到一道题，回答下什么是回调陷进。又是一个新名词，知道promise却不知回调地狱，知识面有待提高啊！</p>
-<p>查了一下，就是Callback Hell。何为回调地狱呢？</p>
-<p>这个一堆以 <code>})</code> 结尾的金字塔，我们很亲切地称它为——“回调地狱”。它增加了函数的嵌套深度也会造成一定的逻辑混乱。</p>
-<p>用代码说话。假设有一个大量AJAX请求。假设ajax()的参数url，data，callback。</p>
-          <div class="read-more">
-            <a href="/2018/04/18/回调地狱-promise/" class="read-more-link">阅读更多</a>
           </div>
         
       
