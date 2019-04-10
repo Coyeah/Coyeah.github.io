@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="React组件的生命周期">
+  <meta name="description" content="记录一点技术记录一点生活">
 
 
 
@@ -42,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://www.coyeah.top/2018/06/13/React组件的生命周期/">
+<link rel="canonical" href="http://www.coyeah.top/page/5/">
 
 
 
@@ -98,7 +98,7 @@
   window.config = {"leancloud":{"enable":true,"app_id":"S24nOfvDVMXopIxtstnGPxbo-gzGzoHsz","app_key":"ze4sgJXBhhjroXU9A45dTdMb"},"toc":true,"fancybox":true,"pjax":true};
 </script>
 
-    <title> React组件的生命周期 - Coyeah's blog </title>
+    <title> Coyeah's blog </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -192,21 +192,25 @@
           <div id="content" class="content">
             
   
+  <section id="posts" class="posts">
+    
+      
+        
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          React组件的生命周期
+          <a class="post-link" href="/2018/01/15/第一个博客+2017迟来的总结/">第一个博客+2017迟来的总结</a>
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2018-06-13
+          2018-01-15
         </span>
         
         
-        <span class="post-visits" data-url="/2018/06/13/React组件的生命周期/" data-title="React组件的生命周期">
+        <span class="post-visits" data-url="/2018/01/15/第一个博客+2017迟来的总结/" data-title="第一个博客+2017迟来的总结">
           阅读次数 0
         </span>
         
@@ -215,119 +219,49 @@
 
     
     
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#React组件的生命周期可分为三个状态："><span class="toc-text">React组件的生命周期可分为三个状态：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React组件的生命周期函数"><span class="toc-text">React组件的生命周期函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#挂载"><span class="toc-text">挂载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新"><span class="toc-text">更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载"><span class="toc-text">卸载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器数据请求"><span class="toc-text">服务器数据请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setState的时机"><span class="toc-text">setState的时机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#render次数-浏览器界面更新次数"><span class="toc-text">render次数 != 浏览器界面更新次数</span></a></li></ol>
-    </div>
-  </div>
-
 
 
     <div class="post-content">
       
-        <h2 id="React组件的生命周期可分为三个状态："><a href="#React组件的生命周期可分为三个状态：" class="headerlink" title="React组件的生命周期可分为三个状态："></a>React组件的生命周期可分为三个状态：</h2><p>挂载、更新、卸载。</p>
-<ul>
-<li>Mounting: 已插入真实DOM;</li>
-<li>Updating: 正在被重新渲染;</li>
-<li>Unmounting: 已移除真实DOM;</li>
-</ul>
-<a id="more"></a>
-<h2 id="React组件的生命周期函数"><a href="#React组件的生命周期函数" class="headerlink" title="React组件的生命周期函数"></a>React组件的生命周期函数</h2><h3 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h3><p>组件初始化</p>
-<p><strong>componentWillMount</strong></p>
-<p>在组件渲染之前调用，在客户端也在服务端。</p>
-<p><strong>componentDidMount</strong></p>
-<p>在第一次渲染后调用，只在客户端。之后组件会生成对应的DOM结构，可以在这个时候进行异步操作等。</p>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>当组件属性修改导致需要重新渲染</p>
-<p><strong>componentWillReceiveProps</strong></p>
-<p>在组件接收到一个新的prop时被调用。</p>
-<p><strong>componentShouldUpdate</strong></p>
-<p>返回一个布尔值。在组件接收到新的prop或者state时被调用。判断是否需要重新渲染组件。</p>
-<p><strong>componentWillUpdate</strong></p>
-<p>接收到新的prop或者state后，在组件重新渲染之前调用。</p>
-<p><strong>componentDidUpdate</strong></p>
-<p>在组件重新渲染之后立即调用。</p>
-<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><p>组件销毁或清理</p>
-<p><strong>componentWillUnmount</strong></p>
-<p>在组件从 DOM 中移除的时候立刻被调用。</p>
-<h2 id="服务器数据请求"><a href="#服务器数据请求" class="headerlink" title="服务器数据请求"></a>服务器数据请求</h2><p>当需要想服务器请求数据，获取组件所需的数据时，最合适的地方是在componentDidMount函数中进行数据请求。</p>
-<h2 id="setState的时机"><a href="#setState的时机" class="headerlink" title="setState的时机"></a>setState的时机</h2><p>可用的函数：componentWillMount、componentDidMount、componentWillReceiveProps、componentDidUpdate</p>
-<p>而在其他生命周期函数调用setState会导致两种结果：产生死循环或者无意义。</p>
-<h2 id="render次数-浏览器界面更新次数"><a href="#render次数-浏览器界面更新次数" class="headerlink" title="render次数 != 浏览器界面更新次数"></a>render次数 != 浏览器界面更新次数</h2>
+        
+        
+          
+        
+
+        
+          <p>憋了两个月，终于开始写自己的第一个博文了，本还兴致勃勃的想给2017来个年终总结的，2017就跑了。对于<code>hexo</code>还是好多地方都没有弄透彻，还是用着最原始最傻的<code>html</code>、<code>css</code>、<code>js</code>，大概是打习惯了。不过效率确实低了点。模板引擎这东西还没能系统的学习，慢慢摸清楚，以后打前端也就不用那么辛苦了。</p>
+<p>总结下2017。</p>
+          <div class="read-more">
+            <a href="/2018/01/15/第一个博客+2017迟来的总结/" class="read-more-link">阅读更多</a>
+          </div>
+        
       
     </div>
 
     
-      
-      
 
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>原文作者: </span>
-      <a href="http://www.coyeah.top">Coyeah Chen</a>
-    </p>
-    <p class="copyright-item">
-      <span>原文链接: </span>
-      <a href="http://www.coyeah.top/2018/06/13/React组件的生命周期/">http://www.coyeah.top/2018/06/13/React组件的生命周期/</a>
-    </p>
-    <p class="copyright-item">
-      <span>许可协议: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
-  </div>
-
-
-
-      
-      
-    
-
-    
-      <footer class="post-footer">
-        
-          <div class="post-tags">
-            
-              <a href="/tags/基础/">基础</a>
-            
-              <a href="/tags/前端/">前端</a>
-            
-              <a href="/tags/React/">React</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2018/06/20/CSS布局：圣杯与flex/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">CSS布局：圣杯与flex</span>
-        <span class="prev-text nav-mobile">上一篇</span>
-      </a>
-    
-    
-      <a class="next" href="/2018/06/12/再一些JS算题/">
-        <span class="next-text nav-default">再一些JS算题</span>
-        <span class="prev-text nav-mobile">下一篇</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    
-  </nav>
-
-
-      </footer>
     
 
   </article>
 
+      
+      
+  <nav class="pagination">
+    
+      <a class="prev" href="/page/4/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    
+    
+  </nav>
+
+
+    
+  </section>
 
           </div>
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
       </main>
@@ -416,11 +350,6 @@
     </div>
 
     
-  
-  
-
-  
-
 
 
     
