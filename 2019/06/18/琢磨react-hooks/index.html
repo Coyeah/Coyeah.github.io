@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="琢磨react-hooks">
+
+
+
+
+  <meta name="keywords" content="blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Coyeah's blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="http://www.coyeah.top/2019/06/18/琢磨react-hooks/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "S24nOfvDVMXopIxtstnGPxbo-gzGzoHsz",
+      appKey: "ze4sgJXBhhjroXU9A45dTdMb"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"enable":true,"app_id":"S24nOfvDVMXopIxtstnGPxbo-gzGzoHsz","app_key":"ze4sgJXBhhjroXU9A45dTdMb"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 琢磨react-hooks - Coyeah's blog </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Coyeah's blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Coyeah's blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          琢磨react-hooks
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-06-18
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2019/06/18/琢磨react-hooks/" data-title="琢磨react-hooks">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#函数组件区别-class-组件"><span class="toc-text">函数组件区别 class 组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在学习过程中对部分-hooks-功能的自我理解"><span class="toc-text">在学习过程中对部分 hooks 功能的自我理解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#useCallback"><span class="toc-text">useCallback</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useRef"><span class="toc-text">useRef</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useLayoutEffect-与-useEffect"><span class="toc-text">useLayoutEffect 与 useEffect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useImperativeHandle-与-forwardRef"><span class="toc-text">useImperativeHandle 与 forwardRef</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p><code>React v16.8</code> 推出了 <code>hooks</code> 的新功能。抱着多学习多种树的心里来琢磨琢磨 hooks。什么是 hooks？是针对函数组件的特殊功能，解决的问题是状态共享。那如果 hooks 玩得好是不是没 redux 什么事了？</p>
+<a id="more"></a>
+<h1 id="函数组件区别-class-组件"><a href="#函数组件区别-class-组件" class="headerlink" title="函数组件区别 class 组件"></a>函数组件区别 class 组件</h1><p>从代码上看出区别：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// class 组件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleClass</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  componentWillMount() &#123;...&#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;...&#125;</span><br><span class="line">  </span><br><span class="line">  componentWilllUnmount() &#123;...&#125;</span><br><span class="line">  </span><br><span class="line">  render() &#123;...&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数组件</span></span><br><span class="line"><span class="keyword">const</span> ExampleFunc = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> () &#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>除了写法上的区别以外，就是函数组件缺少了对于<a href="https://www.coyeah.top/2018/06/13/React%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">React 生命周期</a>上的控制，所以函数组件通常用作展示组件，不会给他赋予一些业务逻辑的操作。hooks 的出现，函数组件可以有自己的内置状态和控制生命周期的能力，那 class 组件也好像没它什么事了？</p>
+<p>使用 React Hooks 相比于从前的类组件有以下几点好处：</p>
+<ul>
+<li>代码可读性更强，原本同一块功能的代码逻辑被拆分在了不同的生命周期函数中，容易使开发者不利于维护和迭代，通过 React Hooks 可以将功能代码聚合，方便阅读维护。</li>
+<li>组件树层级变浅，在原本的代码中，我们经常使用 HOC/render props 等方式来复用组件的状态，增强功能等，无疑增加了组件树层数及渲染，而在 React Hooks 中，这些功能都可以通过强大的自定义的 Hooks 来实现。</li>
+</ul>
+<p>函数组件迫使你思考最佳实践。这是最重要的一点。组件的主要职责是 UI 渲染，理想情况下，所有的组件都是展示性组件，每个页面都是由这些展示性组件组合而成。</p>
+<p>更多介绍可以看看<em>参考资料</em></p>
+<ul>
+<li><a href="https://reactjs.org/docs/hooks-intro.html" target="_blank" rel="noopener">官网介绍</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/50597236" target="_blank" rel="noopener">一篇看懂 React Hooks</a></li>
+<li><a href="https://github.com/dt-fe/weekly/blob/master/95.%E7%B2%BE%E8%AF%BB%E3%80%8AFunction%20VS%20Class%20%E7%BB%84%E4%BB%B6%E3%80%8B.md" target="_blank" rel="noopener">精读《Function VS Class 组件》</a></li>
+</ul>
+<h1 id="在学习过程中对部分-hooks-功能的自我理解"><a href="#在学习过程中对部分-hooks-功能的自我理解" class="headerlink" title="在学习过程中对部分 hooks 功能的自我理解"></a>在学习过程中对部分 hooks 功能的自我理解</h1><p>先抛出 <a href="https://github.com/Coyeah/react-primer#Hooks---demo14" target="_blank" rel="noopener">github 上的 demo</a>。</p>
+<h2 id="useCallback"><a href="#useCallback" class="headerlink" title="useCallback"></a>useCallback</h2><p>从前写代码的时候并不以为然。组件中的 props 变化导致组件触发重新渲染。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Component onClick=&#123;() =&gt; &#123;...&#125;&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>解决办法：</p>
+<ul>
+<li>抽离变量，用变量复制，props 的指向不变。</li>
+<li>通过 this 存储函数，属于 class 组件的用法。</li>
+<li>useCallback</li>
+</ul>
+<p>通过 useCallback 获取一个<code>记忆体函数</code>，避免重新定义带来的不必要的重渲染。</p>
+<p>何为记忆体函数？由于函数组件本质就是函数，每一次调用就是一次函数的运行，而运行函数，这个函数作用域内的所有变量都重新定义，新的函数新的作用域新的定义变量，重新定义变量，props 的指向就变了，就违背了解决不必要渲染的目的。而记忆体函数就是让这个变量在函数运行的时候不要重新定义，变量指向不变，就解决问题了。</p>
+<h2 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h2><blockquote>
+<p>Refs 提供了一种方式，允许我们访问 DOM 节点或在 render 方法中创建的 React 元素</p>
+</blockquote>
+<p>函数组件中也是没有办法操控 ref 的，通过 useRef 返回的值传递 <code>组件/DOM</code> 的 ref 属性又完美解决问题。<em>可通过 <code>ref.current</code> 访问 DOM 节点</em>，<em>useRef 创建的是一个引用</em>。</p>
+<p>利用 useRef 规避了 capture value 特性。</p>
+<p><em>capture value</em>: 在我们使用 setTimeout 的时候，当中所有获取的值都是捕获当时的值，而并非最新值。也就是说，当按下一个按钮调用了 setTimeout 的时候（假设延迟 10 秒运行），而这期间对 state 的值无论怎么改变，都不会影响 setTimeout 的函数。<em><a href="https://segmentfault.com/a/1190000018685253" target="_blank" rel="noopener">参考资料：理解 React Hooks 的 Capture Value 特性</a></em></p>
+<h2 id="useLayoutEffect-与-useEffect"><a href="#useLayoutEffect-与-useEffect" class="headerlink" title="useLayoutEffect 与 useEffect"></a>useLayoutEffect 与 useEffect</h2><p>无论 useLayoutEffect 还是 useEffect 都是对应 ComponentDidMount、ComponentDidUpdate 以及 ComponentWillUnmount 的生命周期，在组件 render 后触发副作用。而其区别在于执行时机不同，useLayoutEffect 是在浏览器读取 DOM 事件时开始运行，在计算一个组件高宽并展示时可以得到更快的响应。而 useEffect 则需要 render 完全完成才开始运行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useEffect:                         start -------- end</span><br><span class="line">                    读取 DOM --------&gt; 渲染至页面 --------&gt; render</span><br><span class="line">useLayoutEffect:      start -------- end</span><br></pre></td></tr></table></figure>
+<p><em><a href="https://github.com/dt-fe/weekly/issues/138" target="_blank" rel="noopener">参考资料：精读《useEffect 完全指南》</a></em></p>
+<h2 id="useImperativeHandle-与-forwardRef"><a href="#useImperativeHandle-与-forwardRef" class="headerlink" title="useImperativeHandle 与 forwardRef"></a>useImperativeHandle 与 forwardRef</h2><p>官方代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FancyInput</span>(<span class="params">props, ref</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> inputRef = useRef();</span><br><span class="line">  useImperativeHandle(ref, () =&gt; (&#123;</span><br><span class="line">    focus: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      inputRef.current.focus();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;));</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">ref</span>=<span class="string">&#123;inputRef&#125;</span> <span class="attr">...</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">FancyInput = forwardRef(FancyInput);</span></span><br></pre></td></tr></table></figure>
+<p>useImperativeHandle 与 forwardRef 是结合使用的，通俗来讲，效果其实就是让父组件通过 ref 来操纵 子组件中的节点，并且可以规定了父组件能够控制的方法。</p>
+<p>useImperativeHandle 第一个参数指向父组件传入的 ref，第二个参数（函数）返回一个对象，创建出给父组件开放的 ref 方法。</p>
+<p>而 forwardRef 则是让子组件可以获取传下来的 ref。<code>function Comonent (props, ref) { ... }</code></p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>呃嗯~~没想好该结啥子结论，继续学习。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://www.coyeah.top">Coyeah Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://www.coyeah.top/2019/06/18/琢磨react-hooks/">http://www.coyeah.top/2019/06/18/琢磨react-hooks/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/React/">React</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2019/04/10/Redux-Store-设计优化问题/">
+        <span class="next-text nav-default">Redux Store 设计优化问题</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:Coyeah_chen@outlook.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Coyeah" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/coyeah-21/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2018 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Coyeah Chen</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

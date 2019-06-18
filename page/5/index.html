@@ -200,6 +200,78 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/01/18/基于AJAX的分页技术/">基于AJAX的分页技术</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-01-18
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/01/18/基于AJAX的分页技术/" data-title="基于AJAX的分页技术">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="为何要分页"><a href="#为何要分页" class="headerlink" title="为何要分页"></a>为何要分页</h2><p>分页可以从以下三个方面考虑</p>
+<ul>
+<li>用户体验</li>
+<li>数据传输量</li>
+<li>数据查询效率</li>
+</ul>
+<p>三种实现思路：</p>
+<ul>
+<li>一次性查询所有数据回来，使用JS进行分页（假分页）<ul>
+<li>缺点：无法实时；数据量大。</li>
+<li>优点：换页时不需要再次查询，只需进行JS操作。</li>
+</ul>
+</li>
+<li>一次性查询所有数据，在处理RS时只获取当前页数据<ul>
+<li>缺点：每次都要查询全部的数据。</li>
+<li>优点：能实时；数据量少。</li>
+</ul>
+</li>
+<li>根据数据总条数算出页数，再按照页数和每页数据量分批查询<ul>
+<li>缺点：要设计者自己计算和设计SQL语句。</li>
+<li>优点：实时；数据量少；效率高。</li>
+</ul>
+</li>
+</ul>
+          <div class="read-more">
+            <a href="/2018/01/18/基于AJAX的分页技术/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/01/15/第一个博客+2017迟来的总结/">第一个博客+2017迟来的总结</a>
         
       </h1>
