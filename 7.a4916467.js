@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{373:function(e,t,a){"use strict";a.r(t);var n=a(2),o=a.n(n),c=a(438),l=a.n(c);t.default=function(e){return o.a.createElement("div",{className:l.a.layout},o.a.createElement("div",{className:l.a.text},"Welcome to the ",o.a.createElement("b",null,"Personal Internet Domicile")," of Coyeah"))}},438:function(e,t,a){e.exports={layout:"src-pages-home-index-module__layout--1yi3c",text:"src-pages-home-index-module__text--2zMYw"}}}]);
-//# sourceMappingURL=7.a4916467.js.map
