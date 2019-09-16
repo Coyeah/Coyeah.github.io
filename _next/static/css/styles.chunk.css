@@ -1,0 +1,114 @@
+.layout___3IWBe {
+  width: 100%;
+  min-height: 100vh;
+}
+.layout___3IWBe .nav___1AMQz {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.layout___3IWBe .nav___1AMQz > div:first-child {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+.layout___3IWBe .main___37e4t {
+  margin: auto;
+  width: 40%;
+  min-height: 70vh;
+}
+@media (max-width: 992px) {
+  .layout___3IWBe .main___37e4t {
+    width: 90%;
+  }
+}
+.layout___3IWBe .footer___35EnJ {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #888;
+}
+.layout-light___1XHhK {
+  border: 18px solid #00adb5;
+}
+.layout-dark___1lLsT {
+  border: 18px solid #DEEAF3;
+}
+.layout-dark___1lLsT,
+.layout-dark___1lLsT a {
+  background-color: #00adb5 !important;
+  color: #fff !important;
+}
+
+.layout___xlObq {
+  letter-spacing: 5px;
+  text-align: center;
+  padding: 18px;
+}
+.layout___xlObq .focus___2xir3 {
+  color: #00adb5;
+  font-weight: bold;
+}
+
+.label___1FH3t {
+  display: inline-block;
+  margin-right: 20px;
+}
+.markdown___oaKFl a {
+  transition: all 0.2s;
+}
+.markdown___oaKFl a:link,
+.markdown___oaKFl a:visited,
+.markdown___oaKFl a:hover,
+.markdown___oaKFl a:active {
+  text-decoration: none;
+}
+.markdown___oaKFl a:link,
+.markdown___oaKFl a:visited {
+  color: #00adb5;
+}
+.markdown___oaKFl a:hover,
+.markdown___oaKFl a:active {
+  color: #222831;
+}
+.markdown___oaKFl blockquote {
+  border-left: 4px solid #00adb5;
+  margin: 0;
+  padding-left: 15px;
+}
+.markdown___oaKFl p img,
+.markdown___oaKFl ul img {
+  width: 100%;
+}
+.markdown___oaKFl p code,
+.markdown___oaKFl ul code {
+  border-radius: 5px;
+  padding: 0px 6px;
+  margin: 0px 3px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.markdown___oaKFl pre {
+  border: 2px solid #00adb5;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 12px;
+  overflow: auto;
+}
+
+.blog-item___2ZW-k {
+  margin-bottom: 24px;
+}
+.blog-item___2ZW-k a:link,
+.blog-item___2ZW-k a:visited {
+  color: #222831;
+}
+.blog-item___2ZW-k a:hover,
+.blog-item___2ZW-k a:active {
+  color: #00adb5;
+}
+
+
+/*# sourceMappingURL=styles.chunk.css.map*/
