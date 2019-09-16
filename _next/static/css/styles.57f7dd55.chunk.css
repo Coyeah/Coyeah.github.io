@@ -49,44 +49,44 @@
   color: #00adb5;
 }
 
-.label___1FH3t {
+.label___NLreX {
   display: inline-block;
   margin-right: 20px;
 }
-.markdown___oaKFl a {
+.markdown___1zFJf a {
   transition: all 0.2s;
 }
-.markdown___oaKFl a:link,
-.markdown___oaKFl a:visited,
-.markdown___oaKFl a:hover,
-.markdown___oaKFl a:active {
+.markdown___1zFJf a:link,
+.markdown___1zFJf a:visited,
+.markdown___1zFJf a:hover,
+.markdown___1zFJf a:active {
   text-decoration: none;
 }
-.markdown___oaKFl a:link,
-.markdown___oaKFl a:visited {
+.markdown___1zFJf a:link,
+.markdown___1zFJf a:visited {
   color: #00adb5;
 }
-.markdown___oaKFl a:hover,
-.markdown___oaKFl a:active {
+.markdown___1zFJf a:hover,
+.markdown___1zFJf a:active {
   color: #222831;
 }
-.markdown___oaKFl blockquote {
+.markdown___1zFJf blockquote {
   border-left: 4px solid #00adb5;
   margin: 0;
   padding-left: 15px;
 }
-.markdown___oaKFl p img,
-.markdown___oaKFl ul img {
+.markdown___1zFJf p img,
+.markdown___1zFJf ul img {
   width: 100%;
 }
-.markdown___oaKFl p code,
-.markdown___oaKFl ul code {
+.markdown___1zFJf p code,
+.markdown___1zFJf ul code {
   border-radius: 5px;
   padding: 0px 6px;
   margin: 0px 3px;
   background-color: rgba(0, 0, 0, 0.1);
 }
-.markdown___oaKFl pre {
+.markdown___1zFJf pre {
   border: 2px solid #00adb5;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
