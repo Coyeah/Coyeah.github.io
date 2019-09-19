@@ -22,7 +22,7 @@
 }
 @media (max-width: 992px) {
   .layout___3IWBe .main___37e4t {
-    width: 90%;
+    width: 90% !important;
   }
 }
 .layout___3IWBe .footer___35EnJ {
